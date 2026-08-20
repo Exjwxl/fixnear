@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
@@ -12,9 +13,13 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#fafaf9] text-zinc-950">
       {/* NAVBAR */}
+
       <nav className="border-b border-zinc-200/70 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-          <div className="flex items-center gap-2.5">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5"
+          >
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-950 text-white">
               <Sparkles size={18} />
             </div>
@@ -22,7 +27,7 @@ export default function Home() {
             <span className="text-xl font-bold tracking-tight">
               FixNear
             </span>
-          </div>
+          </Link>
 
           <div className="hidden items-center gap-8 md:flex">
             <a
@@ -47,17 +52,40 @@ export default function Home() {
             </a>
           </div>
 
-          <button className="hidden rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800 sm:block">
-            Join as a provider
-          </button>
+          <div className="hidden items-center gap-3 sm:flex">
+            <Link
+              href="/auth"
+              className="rounded-full px-4 py-2.5 text-sm font-semibold text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-950"
+            >
+              Log in
+            </Link>
 
-          <button className="rounded-full border border-zinc-200 px-4 py-2 text-sm font-medium sm:hidden">
-            Menu
-          </button>
+            <Link
+              href="/auth"
+              className="rounded-full border border-zinc-200 px-4 py-2.5 text-sm font-semibold text-zinc-700 transition hover:bg-zinc-50 hover:text-zinc-950"
+            >
+              Sign up
+            </Link>
+
+            <Link
+              href="/provider/register"
+              className="rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
+            >
+              Join as a provider
+            </Link>
+          </div>
+
+          <Link
+            href="/auth"
+            className="rounded-full border border-zinc-200 px-4 py-2 text-sm font-medium sm:hidden"
+          >
+            Log in
+          </Link>
         </div>
       </nav>
 
       {/* HERO */}
+
       <section className="relative overflow-hidden border-b border-zinc-200/70 bg-white">
         <div className="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-blue-100/30 blur-3xl" />
 
@@ -84,9 +112,11 @@ export default function Home() {
       </section>
 
       {/* REAL SEARCH + PROVIDERS */}
+
       <ProviderBrowser />
 
       {/* HOW IT WORKS */}
+
       <section
         id="how-it-works"
         className="mx-auto max-w-7xl px-6 py-20 lg:px-8"
@@ -161,6 +191,7 @@ export default function Home() {
       </section>
 
       {/* PROVIDER CTA */}
+
       <section className="px-6 pb-20 lg:px-8">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-zinc-950 px-7 py-14 text-white sm:px-12 lg:px-16 lg:py-16">
           <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-center">
@@ -179,15 +210,19 @@ export default function Home() {
               </p>
             </div>
 
-            <button className="flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-zinc-950 transition hover:bg-zinc-200">
+            <Link
+              href="/provider/register"
+              className="flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-zinc-950 transition hover:bg-zinc-200"
+            >
               Become a provider
               <ArrowRight size={17} />
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
+
       <footer className="border-t border-zinc-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <div className="flex items-center gap-2">
